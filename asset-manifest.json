@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/gornadan/SocialNetwork/static/css/main.24eb1020.chunk.css",
+    "main.js": "/gornadan/SocialNetwork/static/js/main.143887af.chunk.js",
+    "main.js.map": "/gornadan/SocialNetwork/static/js/main.143887af.chunk.js.map",
+    "runtime-main.js": "/gornadan/SocialNetwork/static/js/runtime-main.9afaa3a3.js",
+    "runtime-main.js.map": "/gornadan/SocialNetwork/static/js/runtime-main.9afaa3a3.js.map",
+    "static/js/2.988e6a88.chunk.js": "/gornadan/SocialNetwork/static/js/2.988e6a88.chunk.js",
+    "static/js/2.988e6a88.chunk.js.map": "/gornadan/SocialNetwork/static/js/2.988e6a88.chunk.js.map",
+    "index.html": "/gornadan/SocialNetwork/index.html",
+    "precache-manifest.d160d167e62d86e8db59a6819bc4445c.js": "/gornadan/SocialNetwork/precache-manifest.d160d167e62d86e8db59a6819bc4445c.js",
+    "service-worker.js": "/gornadan/SocialNetwork/service-worker.js",
+    "static/css/main.24eb1020.chunk.css.map": "/gornadan/SocialNetwork/static/css/main.24eb1020.chunk.css.map",
+    "static/js/2.988e6a88.chunk.js.LICENSE.txt": "/gornadan/SocialNetwork/static/js/2.988e6a88.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9afaa3a3.js",
+    "static/js/2.988e6a88.chunk.js",
+    "static/css/main.24eb1020.chunk.css",
+    "static/js/main.143887af.chunk.js"
+  ]
+}
