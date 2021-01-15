@@ -19,10 +19,10 @@ type DialogsPropsType = {
 const Dialogs = (props: DialogsPropsType) => {
 
     let dialogsElements = props.dialogsPage.dialogs
-        .map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
+        .map(dialog => <DialogItem name={dialog.name} id={dialog.id} key={dialog.id}/> );
 
     let messagesElements = props.dialogsPage.messages
-        .map(message => <Message message={message.message} id={message.id}/>);
+        .map(message => <Message message={message.message} id={message.id} key={message.id}/>);
 
     let newMessageElement = React.createRef<HTMLTextAreaElement>();
 

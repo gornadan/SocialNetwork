@@ -7,13 +7,6 @@ import store from "./redux/reduxStore";
 import {Provider} from "react-redux";
 
 
-
-// type PropsType = {
-//     store: Store
-//
-// }
-
-let renderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>
@@ -21,12 +14,10 @@ let renderEntireTree = () => {
             </Provider>
         </BrowserRouter>,
         document.getElementById('root'));
-}
 
-renderEntireTree();
-store.subscribe(() => {
-    renderEntireTree()
-});
+
+
+
 
 
 // If you want to start measuring performance in your app, pass a function

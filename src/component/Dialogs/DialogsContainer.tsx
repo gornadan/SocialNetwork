@@ -10,36 +10,6 @@ import {Dispatch, Store} from "redux";
 import {DialogPageType} from "../../redux/state";
 import {AppStateType} from "../../redux/reduxStore";
 
-
-// const DialogsContainer = () => {
-//
-//     return (
-//         <StoreContext.Consumer>
-//             {
-//                 store => {
-//                     let state = store.getState();
-//
-//
-//                     let onSendMessageClick = () => {
-//                         store.dispatch(SendMessageAC(state.newMessageBody))
-//                     }
-//
-//                     let onMessageChange = (text: string) => {
-//                         store.dispatch(UpdateNewMessageBodyAC(text))
-//                     }
-//
-//                     return (
-//                         <Dialogs
-//                                  dialogsPage={state.dialogsPage}
-//                                  updateNewMessageBody={onMessageChange}
-//                                  sendMessage={onSendMessageClick}
-//                                  // newMessageBody={state.dialogsPage.newMessageBody}
-//                         />)
-//                 }
-//             }
-//         </StoreContext.Consumer>
-//     )
-// }
 type MapStateToPropsType = {
     dialogsPage: DialogPageType
 }

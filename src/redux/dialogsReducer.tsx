@@ -61,16 +61,23 @@ export const SendMessageAC = (): SendMessageACType => {
 }
 
 export const dialogsReducer = (state = initialState, action: any): InitialStateTypeDialogs => {
+
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY_TEXT:
-            state.newMessageBody = action.newMessage;
-            return state;
+           return {
+                ...state,
+                newMessageBody: action.newMessage
+            };
 
         case SEND_MESSAGE:
             let body = state.newMessageBody;
-            state.messages.push({id: 6, message: body});
-            state.newMessageBody = "";
-            return state;
+           return {
+                ...state,
+                messages: [...state.messages, {id: 6, message: body}],
+                newMessageBody: ""
+            };
+
+
 
         default:
             return state;
