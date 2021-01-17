@@ -48,6 +48,7 @@ export const UpdateNewPostTextAC = (newText: string): UpdateNewPostTextACType =>
 };
 
 
+
 export const profileReducer = (state = initialState, action: any): InitialStateTypeProfile => {
     switch (action.type) {
         case ADD_POST: {
