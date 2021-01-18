@@ -1,32 +1,42 @@
 import React from "react";
-import classes from "./Users.module.css";
-import  axios from "axios"
 import {UsersType} from "../../redux/usersReducer";
-import userPhoto from "../../assets/img/images.png"
-
-
+import classes from "./Users.module.css";
+import userPhoto from "../../assets/img/images.png";
 
 type UsersPropsType = {
-    users:  Array<UsersType>
+    users: Array<UsersType>
+    pageSize: number
+    totalUsersCount: number
+    currentPage: number
     follow: (userId: number) => void
     unFollow: (userId: number) => void
-    setUsers: (users: Array<UsersType>) => void
-
+    // setUsers: (users: Array<UsersType>) => void
+    // setCurrentPage: (currentPage: number) => void
+    // setTotalUsersCount: (totalCount: number) => void
+    onPageChanged: (pageNumber: number) => void
 }
 
-const Users = (props: UsersPropsType) => {
-    if (props.users.length === 0) {
+let Users = (props: UsersPropsType) => {
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-                debugger;
-                props.setUsers(response.data.items)
-            })
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i)
     }
+    return <div>
+        <div>
+            {pages.map(p => {
 
+                return <span
+                    onClick={() => {
+                        props.onPageChanged(p)
+                    }}
+                    className={p === props.currentPage ? classes.selectedPage : ""}>{p}</span>
+            })}
+        </div>
 
-    return <div>{
-        props.users.map(u => <div key={u.id}>
+        {
+            props.users.map(u => <div key={u.id}>
             <span>
                 <div>
                     <img src={u.photos.small != null ? u.photos.small : userPhoto} className={classes.userPhoto}/>
@@ -43,7 +53,7 @@ const Users = (props: UsersPropsType) => {
 
                 </div>
             </span>
-            <span>
+                <span>
                  <span>
                      <div>{u.name}</div>
                      <div>{u.status}</div>
@@ -52,8 +62,8 @@ const Users = (props: UsersPropsType) => {
                      <div>{"u.location.country"}</div>
                  </span>
             </span>
-        </div>)
-    }</div>
+            </div>)
+        }</div>
 }
 
 export default Users;
