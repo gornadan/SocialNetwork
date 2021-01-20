@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "657030514af11db2ba8e42ada72f02dd",
+    "revision": "b63f4a18bc27689304bb476362ae9cac",
     "url": "/gornadan/SocialNetwork/index.html"
   },
   {
-    "revision": "9d19b104034b3bb5c32f",
-    "url": "/gornadan/SocialNetwork/static/css/main.cb0cdce5.chunk.css"
+    "revision": "fe607b8eb0c2bc17d94a",
+    "url": "/gornadan/SocialNetwork/static/css/main.56bbde1c.chunk.css"
   },
   {
-    "revision": "8208f3d715f1104948bb",
-    "url": "/gornadan/SocialNetwork/static/js/2.c68a04a3.chunk.js"
+    "revision": "45672c88c1dde52eff92",
+    "url": "/gornadan/SocialNetwork/static/js/2.10d4f913.chunk.js"
   },
   {
     "revision": "3c73c585782ac05880c0f89bcfdbba5a",
-    "url": "/gornadan/SocialNetwork/static/js/2.c68a04a3.chunk.js.LICENSE.txt"
+    "url": "/gornadan/SocialNetwork/static/js/2.10d4f913.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9d19b104034b3bb5c32f",
-    "url": "/gornadan/SocialNetwork/static/js/main.40c9c9dc.chunk.js"
+    "revision": "fe607b8eb0c2bc17d94a",
+    "url": "/gornadan/SocialNetwork/static/js/main.0f4a6bfc.chunk.js"
   },
   {
     "revision": "82889300d762a7bdec17",
