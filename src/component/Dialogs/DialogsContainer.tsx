@@ -1,5 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import {
+    DialogPageType,
 
     SendMessageAC, UpdateNewMessageBodyAC,
 
@@ -7,7 +8,7 @@ import {
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {Dispatch, Store} from "redux";
-import {DialogPageType} from "../../redux/state";
+
 import {AppStateType} from "../../redux/reduxStore";
 
 type MapStateToPropsType = {

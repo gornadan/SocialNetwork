@@ -2,6 +2,7 @@ import React from "react";
 import {UsersType} from "../../redux/usersReducer";
 import classes from "./Users.module.css";
 import userPhoto from "../../assets/img/images.png";
+import {NavLink} from "react-router-dom";
 
 type UsersPropsType = {
     users: Array<UsersType>
@@ -10,9 +11,6 @@ type UsersPropsType = {
     currentPage: number
     follow: (userId: number) => void
     unFollow: (userId: number) => void
-    // setUsers: (users: Array<UsersType>) => void
-    // setCurrentPage: (currentPage: number) => void
-    // setTotalUsersCount: (totalCount: number) => void
     onPageChanged: (pageNumber: number) => void
 }
 
@@ -39,7 +37,9 @@ let Users = (props: UsersPropsType) => {
             props.users.map(u => <div key={u.id}>
             <span>
                 <div>
+                    <NavLink to={'/profile' + u.id}>
                     <img src={u.photos.small != null ? u.photos.small : userPhoto} className={classes.userPhoto}/>
+                    </NavLink>
                 </div>
                 <div>
                     {u.followed

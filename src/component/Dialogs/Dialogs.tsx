@@ -3,11 +3,11 @@ import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import {
-    ActionsTypes, InitialStateTypeDialogs,
+    ActionsTypes, DialogPageType, InitialStateTypeDialogs,
     SendMessageAC, UpdateNewMessageBodyAC,
 
 } from "../../redux/dialogsReducer";
-import {DialogPageType} from "../../redux/state"
+
 
 type DialogsPropsType = {
     dialogsPage: DialogPageType

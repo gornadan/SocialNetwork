@@ -3,10 +3,38 @@ import React from 'react';
 
 const ADD_POST = "ADD_POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
+const SET_USER_PROFILE = "SET_USER_PROFILE";
+
+type ContactsType = {
+    github: string
+    vk: string
+    facebook: string
+    instagram: string
+    twitter: string
+    website: string
+    youtube: string
+    mainLink: string
+}
+
+type PhotosType  = {
+    small: string
+    large: string
+}
+export type ProfileType = {
+    userId: number
+    status: string
+    lookingForAJob: boolean
+    lookingForAJobDescription: string
+    fullName: string
+    contacts: ContactsType
+     photos: PhotosType
+
+}
 
 export type ProfileActionsTypes =
     ReturnType<typeof AddPostAC>
     | ReturnType<typeof UpdateNewPostTextAC>
+    | ReturnType<typeof setUserProfileAC>
 
 export type PostsType = {
     id: number
@@ -14,9 +42,8 @@ export type PostsType = {
     message: string
 }
 
-export type InitialStateTypeProfile = typeof initialState
-// posts: Array<PostsType>
-// newPostText: string
+
+
 
 
 let initialState = {
@@ -26,8 +53,14 @@ let initialState = {
         {id: 3, likeCount: 15, message: "How are you&"},
         {id: 4, likeCount: 43, message: "Good afternoon!!!"}
     ] as Array<PostsType>,
-    newPostText: "it-kamasutra.com" as string
+    newPostText: "it-kamasutra.com",
+    profile: null as ProfileType | null
 }
+
+export type InitialStateTypeProfile = typeof initialState
+
+
+
 type AddPostACType = {
     type: typeof ADD_POST
 }
@@ -47,9 +80,22 @@ export const UpdateNewPostTextAC = (newText: string): UpdateNewPostTextACType =>
     }
 };
 
+type SetUserProfileACType = {
+    type: typeof SET_USER_PROFILE
+    profile: ProfileType | null
+
+}
+
+export const setUserProfileAC = (profile: ProfileType | null ): SetUserProfileACType => {
+    return {
+        type: SET_USER_PROFILE,
+        profile: profile
+
+    }
+};
 
 
-export const profileReducer = (state = initialState, action: any): InitialStateTypeProfile => {
+export const profileReducer = (state = initialState, action: ProfileActionsTypes): InitialStateTypeProfile => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
@@ -69,7 +115,9 @@ export const profileReducer = (state = initialState, action: any): InitialStateT
                 ...state,
                 newPostText: action.newText
             };
-
+        }
+        case SET_USER_PROFILE: {
+            return {...state, profile: action.profile}
         }
         default:
             return state
