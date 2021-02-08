@@ -4,6 +4,7 @@ import {InitialStateTypeProfile, profileReducer} from "./profileReducer";
 import {dialogsReducer, InitialStateTypeDialogs} from "./dialogsReducer";
 import {InitialStateTypeSidebar, sidebarReducer} from "./sidebarReducer";
 import {InitialStateTypeUsers, usersReducer} from "./usersReducer";
+import {authReducer} from "./authReducer";
 
 type ReducersType = {
     profilePage: InitialStateTypeProfile,
@@ -18,7 +19,8 @@ let reducers = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     sidebarPage: sidebarReducer,
-    usersPage: usersReducer
+    usersPage: usersReducer,
+    auth: authReducer
 })
 
 let store: Store  = createStore(reducers);

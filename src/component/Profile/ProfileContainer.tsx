@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {AppStateType} from "../../redux/reduxStore";
 import {PostsType, ProfileType, setUserProfileAC} from "../../redux/profileReducer";
 import Preloader from "../common/Preloader";
+import {withRouter} from "react-router";
 
 
 type MapStateToPropsType =  {
@@ -24,9 +25,14 @@ type ProfilePropsType = {
 }
 
 
-class ProfileContainer extends React.Component <ProfilePropsType>{
+class ProfileContainer extends React.Component <any>{
     componentDidMount () {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/22`)
+        debugger;
+         let userId = this.props.match.userId;
+        if(!userId){
+             userId = '22'
+         }
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/`+ userId )
             .then(response => {
 
                 this.props.setUserProfile(response.data)
@@ -56,5 +62,6 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     }
 }
 
+let withUrlDataContainerComponent =  withRouter(ProfileContainer);
 export default connect (mapStateToProps, {
-    setUserProfile: setUserProfileAC})(ProfileContainer);
+    setUserProfile: setUserProfileAC})(withUrlDataContainerComponent);
