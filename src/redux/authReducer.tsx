@@ -1,5 +1,7 @@
 import React from 'react';
 import {SendMessageAC, UpdateNewMessageBodyAC} from "./dialogsReducer";
+import {Dispatch} from "redux";
+import {authAPI} from "../api/api";
 
 
 const SET_USER_DATA = "SET_USER_DATA";
@@ -59,5 +61,15 @@ export const setAuthUserData = (userId: number| null, email: string | null, logi
             isAuth
         }
     }
+}
+
+export  const getAuthUserData = () => (dispatch: Dispatch) => {
+    authAPI.me()
+        .then(response => {
+            if(response.data.resultCode === 0) {
+                let {id, login, email, isAuth} = response.data.data
+                dispatch(setAuthUserData(id, email, login, isAuth))
+            }
+        })
 }
 

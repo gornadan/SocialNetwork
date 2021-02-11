@@ -1,4 +1,6 @@
 import React from 'react';
+import {Dispatch} from "redux";
+import {usersAPI} from "../api/api";
 
 
 const ADD_POST = "ADD_POST";
@@ -34,16 +36,13 @@ export type ProfileType = {
 export type ProfileActionsTypes =
     ReturnType<typeof AddPostAC>
     | ReturnType<typeof UpdateNewPostTextAC>
-    | ReturnType<typeof setUserProfileAC>
+    | ReturnType<typeof setUserProfile>
 
 export type PostsType = {
     id: number
     likeCount: number
     message: string
 }
-
-
-
 
 
 let initialState = {
@@ -86,7 +85,7 @@ type SetUserProfileACType = {
 
 }
 
-export const setUserProfileAC = (profile: ProfileType | null ): SetUserProfileACType => {
+export const setUserProfile = (profile: ProfileType | null ): SetUserProfileACType => {
     return {
         type: SET_USER_PROFILE,
         profile: profile
@@ -123,4 +122,12 @@ export const profileReducer = (state = initialState, action: ProfileActionsTypes
             return state
     }
 
+}
+
+export const getUserProfile = (userId: number) => (dispatch: Dispatch) => {
+    usersAPI.getProfile(userId)
+        .then(response => {
+
+            dispatch(setUserProfile(response.data))
+        })
 }
