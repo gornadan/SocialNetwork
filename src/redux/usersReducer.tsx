@@ -7,6 +7,7 @@ const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
+const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
 
 
 export type UsersActionsTypes =
@@ -16,6 +17,7 @@ export type UsersActionsTypes =
     | ReturnType<typeof setCurrentPageAC>
     | ReturnType<typeof setTotalUsersCountAC>
     | ReturnType<typeof toggleIsFetchingAC>
+    | ReturnType<typeof toggleFollowingProgress>
 
 export type UsersPageType = {
     users: Array<UsersType>
@@ -23,6 +25,7 @@ export type UsersPageType = {
     totalUsersCount: number
     currentPage: number
     isFetching: boolean
+    followingInProgress: Array<number>
 }
 
 export type UsersType = {
@@ -42,7 +45,8 @@ let initialState: UsersPageType = {
     pageSize: 10,
     totalUsersCount: 0,
     currentPage: 1,
-    isFetching: false
+    isFetching: false,
+    followingInProgress: []
 
 }
 type FollowACType = {
@@ -97,6 +101,15 @@ type ToggleIsFetchingACType = {
 }
 export const toggleIsFetchingAC = (isFetching: boolean): ToggleIsFetchingACType => {
     return {type: TOGGLE_IS_FETCHING, isFetching}
+};
+
+type toggleFollowingProgressACType = {
+    type: "TOGGLE_IS_FOLLOWING_PROGRESS"
+    isFetching: boolean
+    userId: number
+}
+export const toggleFollowingProgress = (isFetching: boolean, userId: number): toggleFollowingProgressACType => {
+    return {type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId}
 }
 
 
@@ -131,12 +144,19 @@ export const usersReducer = (state: UsersPageType = initialState, action: UsersA
         case SET_TOTAL_USERS_COUNT:
             return {...state, totalUsersCount: action.totalUsersCount};
         case TOGGLE_IS_FETCHING:
-            return {...state, isFetching: action.isFetching}
+            return {...state, isFetching: action.isFetching};
+        case  TOGGLE_IS_FOLLOWING_PROGRESS:
+            return {
+                ...state,
+                followingInProgress: action.isFetching
+                    ? [...state.followingInProgress, action.userId]
+                    : state.followingInProgress.filter(id => id != action.userId)
+            };
 
 
         default:
             return state
     }
 
-};
+}
 
