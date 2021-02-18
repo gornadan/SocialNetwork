@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from 'react';
+import React from 'react';
 import {
     DialogPageType,
 
@@ -7,12 +7,15 @@ import {
 } from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
-import {Dispatch, Store} from "redux";
+import {compose, Dispatch} from "redux";
 
 import {AppStateType} from "../../redux/reduxStore";
+import {withAuthRedirect} from "../../hoc/withAuthRedidrect";
 
 type MapStateToPropsType = {
     dialogsPage: DialogPageType
+
+
 }
 
 type MapDispatchToPropsType = {
@@ -36,7 +39,10 @@ let mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
             dispatch(UpdateNewMessageBodyAC(text))
         }
     }
-}
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+};
 
-export default DialogsContainer;
+export default compose <React.ComponentType>(connect(mapStateToProps, mapDispatchToProps), withAuthRedirect)(Dialogs);
+// const DialogsContainer = withAuthRedirect(connect(mapStateToProps, mapDispatchToProps)(Dialogs));
+//
+//
+// export default DialogsContainer;

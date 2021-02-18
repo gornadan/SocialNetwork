@@ -16,7 +16,7 @@ export type ActionsTypes = ReturnType<typeof setAuthUserData>
 
 
 export type InitialStateType = {
-    userId: number| null
+    id: number| null
     email: string | null
     login: string |null
     isAuth: boolean
@@ -25,9 +25,9 @@ export type InitialStateType = {
 
 
 let initialState = {
-    userId: null,
+    id: -1,
     email: null,
-    login: null,
+    login: '',
     isAuth: false
 }
 
@@ -35,7 +35,7 @@ let initialState = {
 
 
 
-export const authReducer = (state = initialState, action: ActionsTypes): InitialStateType=> {
+export const authReducer = (state: InitialStateType = initialState, action: ActionsTypes): InitialStateType=> {
 
     switch (action.type) {
         case SET_USER_DATA:
@@ -51,11 +51,11 @@ export const authReducer = (state = initialState, action: ActionsTypes): Initial
     }
 }
 
-export const setAuthUserData = (userId: number| null, email: string | null, login: string | null, isAuth: boolean): SetUserDataType => {
+export const setAuthUserData = (id: number| null, email: string | null, login: string | null, isAuth: boolean): SetUserDataType => {
     return {
         type: SET_USER_DATA,
         data: {
-            userId,
+            id,
             email,
             login,
             isAuth

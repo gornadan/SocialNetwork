@@ -7,12 +7,15 @@ import {
     SendMessageAC, UpdateNewMessageBodyAC,
 
 } from "../../redux/dialogsReducer";
+import {Redirect} from "react-router";
+
 
 
 type DialogsPropsType = {
     dialogsPage: DialogPageType
     sendMessage:() => void
     updateNewMessageBody: (text: string) => void
+    isAuth: boolean
 
 }
 
@@ -35,7 +38,8 @@ const Dialogs = (props: DialogsPropsType) => {
             let text = newMessageElement.current.value
             props.updateNewMessageBody(text)
         }
-    }
+    };
+    // if(!props.isAuth) return <Redirect to={'/login'}/>
 
 
     return (
