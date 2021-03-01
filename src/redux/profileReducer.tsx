@@ -64,10 +64,11 @@ export type InitialStateTypeProfile = typeof initialState
 
 
 type AddPostACType = {
-    type: typeof ADD_POST
+    type: typeof ADD_POST,
+    newPostText: string
 }
-export const AddPostAC = (): AddPostACType => {
-    return {type: ADD_POST}
+export const AddPostAC = (newPostText: string): AddPostACType => {
+    return {type: ADD_POST, newPostText}
 }
 
 type UpdateNewPostTextACType = {
@@ -110,7 +111,7 @@ export const profileReducer = (state = initialState, action: ProfileActionsTypes
             let newPost = {
                 id: 5,
                 likeCount: 0,
-                message: state.newPostText
+                message: action.newPostText
             };
             return {
                 ...state,

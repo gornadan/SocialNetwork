@@ -2,7 +2,7 @@ import React from 'react';
 import {
     DialogPageType,
 
-    SendMessageAC, UpdateNewMessageBodyAC,
+    SendMessageAC
 
 } from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
@@ -19,9 +19,7 @@ type MapStateToPropsType = {
 }
 
 type MapDispatchToPropsType = {
-    sendMessage:() => void
-    updateNewMessageBody: (text: string) => void
-
+    sendMessage:(newMessageBody: string) => void
 }
 
 let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
@@ -32,11 +30,8 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 
 let mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
     return {
-        sendMessage: () => {
-            dispatch(SendMessageAC())
-        },
-        updateNewMessageBody: (text: string) => {
-            dispatch(UpdateNewMessageBodyAC(text))
+        sendMessage: (newMessageBody: string) => {
+            dispatch(SendMessageAC(newMessageBody))
         }
     }
 };

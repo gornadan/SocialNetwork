@@ -1,5 +1,4 @@
 import React from 'react';
-import {SendMessageAC, UpdateNewMessageBodyAC} from "./dialogsReducer";
 import {Dispatch} from "redux";
 import {authAPI} from "../api/api";
 

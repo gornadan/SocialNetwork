@@ -1,13 +1,12 @@
 import React from 'react';
+import {string} from "prop-types";
 
 
-const UPDATE_NEW_MESSAGE_BODY_TEXT = "UPDATE_NEW_MESSAGE_BODY_TEXT"
+
 const SEND_MESSAGE = "SEND_MESSAGE";
 
 
-export type ActionsTypes =
-    ReturnType<typeof UpdateNewMessageBodyAC>
-    | ReturnType<typeof SendMessageAC>
+export type ActionsTypes = ReturnType<typeof SendMessageAC>
 
 export type MessagesType = {
     id: number
@@ -44,43 +43,45 @@ let initialState = {
     newMessageBody: "" as string
 }
 
-type UpdateNewMessageBodyACType = {
-    type: typeof UPDATE_NEW_MESSAGE_BODY_TEXT
-    newMessage: string
-}
+// type UpdateNewMessageBodyACType = {
+//     type: typeof UPDATE_NEW_MESSAGE_BODY_TEXT
+//     newMessage: string
+// }
 
-export const UpdateNewMessageBodyAC = (newMessage: string): UpdateNewMessageBodyACType => {
-    return {
-        type: UPDATE_NEW_MESSAGE_BODY_TEXT,
-        newMessage: newMessage
-    }
-}
+// export const UpdateNewMessageBodyAC = (newMessage: string): UpdateNewMessageBodyACType => {
+//     return {
+//         type: UPDATE_NEW_MESSAGE_BODY_TEXT,
+//         newMessage: newMessage
+//     }
+// }
 
 type SendMessageACType = {
     type: typeof SEND_MESSAGE
+    newMessageBody: string
 }
 
-export const SendMessageAC = (): SendMessageACType => {
+export const SendMessageAC = (newMessageBody: string): SendMessageACType => {
     return {
-        type: SEND_MESSAGE
+        type: SEND_MESSAGE,
+        newMessageBody: newMessageBody
     }
 }
 
-export const dialogsReducer = (state = initialState, action: any): InitialStateTypeDialogs => {
+export const dialogsReducer = (state = initialState, action: ActionsTypes): InitialStateTypeDialogs => {
 
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY_TEXT:
-           return {
-                ...state,
-                newMessageBody: action.newMessage
-            };
+        // case UPDATE_NEW_MESSAGE_BODY_TEXT:
+        //    return {
+        //         ...state,
+        //         newMessageBody: action.newMessage
+        //     };
 
         case SEND_MESSAGE:
-            let body = state.newMessageBody;
+            let body = action.newMessageBody;
            return {
                 ...state,
                 messages: [...state.messages, {id: 6, message: body}],
-                newMessageBody: ""
+                // newMessageBody: ""
             };
 
 
