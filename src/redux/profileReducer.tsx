@@ -36,7 +36,7 @@ export type ProfileType = {
 
 export type ProfileActionsTypes =
     ReturnType<typeof AddPostAC>
-    | ReturnType<typeof UpdateNewPostTextAC>
+    // | ReturnType<typeof UpdateNewPostTextAC>
     | ReturnType<typeof setUserProfile>
     | ReturnType<typeof  SetStatus>
 
@@ -71,17 +71,17 @@ export const AddPostAC = (newPostText: string): AddPostACType => {
     return {type: ADD_POST, newPostText}
 }
 
-type UpdateNewPostTextACType = {
-    type: typeof UPDATE_NEW_POST_TEXT
-    newText: string
-}
+// type UpdateNewPostTextACType = {
+//     type: typeof UPDATE_NEW_POST_TEXT
+//     newText: string
+// }
 
-export const UpdateNewPostTextAC = (newText: string): UpdateNewPostTextACType => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: newText
-    }
-};
+// export const UpdateNewPostTextAC = (newText: string): UpdateNewPostTextACType => {
+//     return {
+//         type: UPDATE_NEW_POST_TEXT,
+//         newText: newText
+//     }
+// };
 
 type SetUserProfileACType = {
     type: typeof SET_USER_PROFILE
@@ -120,12 +120,12 @@ export const profileReducer = (state = initialState, action: ProfileActionsTypes
             };
 
         }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
-            };
-        }
+        // case UPDATE_NEW_POST_TEXT: {
+        //     return {
+        //         ...state,
+        //         newPostText: action.newText
+        //     };
+        // }
         case SET_USER_PROFILE: {
             return {...state, profile: action.profile}
         }
