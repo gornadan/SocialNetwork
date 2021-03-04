@@ -17,8 +17,9 @@ import {string} from "prop-types";
 type MapStateToPropsType =  {
     profile: ProfileType | null,
     isAuth: boolean,
-    status: string
-       // posts: Array<PostsType>
+    status: string,
+    authorizedUserId: number | null
+    // posts: Array<PostsType>
     // newPostText: string
 }
 
@@ -34,7 +35,7 @@ class ProfileContainer extends React.Component <any>{
 
          let userId = this.props.match.params.userId;
         if(!userId){
-             userId = 22
+             userId = this.props.authorizedUserId
          }
          this.props.getUserProfile(userId);
         this.props.getStatus(userId)
@@ -63,7 +64,9 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         profile: state.profilePage.profile,
         isAuth: state.auth.isAuth,
-        status: state.profilePage.status
+        status: state.profilePage.status,
+        authorizedUserId: state.auth.id
+
     }
 }
 
