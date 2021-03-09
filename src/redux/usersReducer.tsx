@@ -163,9 +163,11 @@ export const usersReducer = (state: UsersPageType = initialState, action: UsersA
 };
 
 export const getUsers = (currentPage: number, pageSize: number) => {
-    debugger
-    return (dispatch: any) => {
+
+    return (dispatch: Dispatch) => {
         dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(currentPage));
+
         usersAPI.getUsers(currentPage, pageSize).then(data => {
             dispatch(toggleIsFetching(false));
             dispatch(setUsers(data.items));

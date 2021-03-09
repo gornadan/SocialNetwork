@@ -8,18 +8,14 @@ import {Redirect} from "react-router";
 import {AppStateType} from "../../redux/reduxStore";
 import s from "../common/FormsControl/FormsControl.module.css"
 
-
 type LoginFormPropsType = {
     email: string
     password: string
     rememberMe: boolean
-
 }
-
 
 const LoginForm = (props: InjectedFormProps<LoginFormPropsType>) => {
     return (
-
         <form onSubmit={props.handleSubmit}>
             <div><Field placeholder={"Email"}
                         name={"email"}
@@ -36,9 +32,9 @@ const LoginForm = (props: InjectedFormProps<LoginFormPropsType>) => {
     )
 };
 
-const LoginReduxForm = reduxForm< LoginFormPropsType>({
+const LoginReduxForm = reduxForm<LoginFormPropsType>({
     form: 'login'
-})(LoginForm)
+})(LoginForm);
 
 type LoginPropsType = {
     login: (email: string, password: string,  rememberMe: boolean ) => void
