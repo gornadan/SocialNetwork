@@ -29,7 +29,7 @@
     "typescript": "^4.1.3",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "https://github.com/gornadan/SocialNetwork",
+  "homepage": "https://gornadan.github.io/SocialNetwork",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -59,7 +59,7 @@
   "devDependencies": {
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
-    "gh-pages": "^3.1.0",
+    "gh-pages": "^3.2.3",
     "react-test-renderer": "17.0.1"
   }
 }
