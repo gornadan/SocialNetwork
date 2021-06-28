@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="029da6a2-591d-423e-97da-458564929ed2" name="Default" comment="feat: add profileStatusTest">
-      <change afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatus.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Users/User/User.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Users/User/User.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/common/Paginator/Paginator.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/common/Paginator/Paginators.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/profileReducer.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/common/Paginator/Paginators.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hoc/withSuspense.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Profile/Myposts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/Myposts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatus.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatusWithHooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatusWithHooks.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/common/Paginator/Paginators.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/common/Paginator/Paginators.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/usersReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/usersReducer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +20,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -106,6 +101,9 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="906" />
@@ -186,7 +184,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="Login&#9;FILE&#9;file://D:/it-kamasutra/TypeScript/my-app/src/component/Login/Login.tsx" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/component/Profile/ProfileInfo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/hoc" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="D:\it-kamasutra\TypeScript\my-app\node_modules\eslint" />
@@ -201,11 +199,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\it-kamasutra\TypeScript\my-app\src\hoc" />
+      <recent name="D:\it-kamasutra\TypeScript\my-app\src\component\common\Paginator" />
       <recent name="D:\it-kamasutra\TypeScript\my-app\src\component\Profile\ProfileInfo" />
       <recent name="D:\it-kamasutra\TypeScript\my-app\src\component\Users\User" />
-      <recent name="D:\it-kamasutra\TypeScript\my-app\src\component\common\Paginator" />
       <recent name="D:\it-kamasutra\TypeScript\my-app\src\component\Users" />
-      <recent name="D:\it-kamasutra\TypeScript\my-app\src\redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\it-kamasutra\TypeScript\my-app\src\component\Users\User" />
@@ -215,32 +213,32 @@
       <recent name="D:\it-kamasutra\TypeScript\my-app\src\component\Profile" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.ProfileStatus component.callback should be called">
-    <configuration name="ProfileStatus component.after creating input shouldn't be displayed " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Paginator component.if pages count is more then 15 button NEXT should be present">
+    <configuration name="Paginator component.if pages count is more then 15 button NEXT should be present" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatus.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/component/common/Paginator/Paginators.test.tsx" />
       <test-names>
-        <test-name value="ProfileStatus component" />
-        <test-name value="after creating input shouldn't be displayed " />
+        <test-name value="Paginator component" />
+        <test-name value="if pages count is more then 15 button NEXT should be present" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="ProfileStatus component.after creating span should be displayed " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Paginator component.status from props should be in the state " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatus.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/component/common/Paginator/Paginators.test.tsx" />
       <test-names>
-        <test-name value="ProfileStatus component" />
-        <test-name value="after creating span should be displayed " />
+        <test-name value="Paginator component" />
+        <test-name value="status from props should be in the state " />
       </test-names>
       <method v="2" />
     </configuration>
@@ -287,19 +285,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.ProfileStatus component.after creating span should be displayed " />
-      <item itemvalue="Jest.ProfileStatus component.after creating input shouldn't be displayed " />
       <item itemvalue="Jest.ProfileStatus component.after creating span should contains correct status " />
       <item itemvalue="Jest.ProfileStatus component.input should be displayed in editMode instead of span" />
       <item itemvalue="Jest.ProfileStatus component.callback should be called" />
+      <item itemvalue="Jest.Paginator component.status from props should be in the state " />
+      <item itemvalue="Jest.Paginator component.if pages count is more then 15 button NEXT should be present" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Paginator component.if pages count is more then 15 button NEXT should be present" />
+        <item itemvalue="Jest.Paginator component.status from props should be in the state " />
         <item itemvalue="Jest.ProfileStatus component.callback should be called" />
         <item itemvalue="Jest.ProfileStatus component.input should be displayed in editMode instead of span" />
         <item itemvalue="Jest.ProfileStatus component.after creating span should contains correct status " />
-        <item itemvalue="Jest.ProfileStatus component.after creating input shouldn't be displayed " />
-        <item itemvalue="Jest.ProfileStatus component.after creating span should be displayed " />
       </list>
     </recent_temporary>
   </component>
@@ -365,8 +363,16 @@
       <workItem from="1620120489704" duration="19610000" />
       <workItem from="1620386885903" duration="1402000" />
       <workItem from="1624594580045" duration="5477000" />
-      <workItem from="1624857531645" duration="4691000" />
+      <workItem from="1624857531645" duration="12175000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add profileStatusTest">
+      <created>1624862690818</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624862690818</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -446,6 +452,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/redux/usersSelectors.ts</url>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
