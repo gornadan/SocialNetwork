@@ -1,13 +1,10 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {Dispatch} from "redux";
 import {AppStateType} from "../../redux/reduxStore";
 import {
     follow,
-    followSuccess, getUsers,
-    setCurrentPage, toggleFollowingProgress, unFollow,
-    unFollowSuccess,
-    UsersType
+    getUsers,
+    setCurrentPage, toggleFollowingProgress, unFollow, UsersType
 } from "../../redux/usersReducer";
 import Users from "./Users";
 import Preloader from "../common/Preloader";
@@ -16,7 +13,7 @@ import {
     getIsFetching,
     getPageSize,
     getTotalUsersCount,
-    getUsersSelector, getUsersSuperSelector
+    getUsersSuperSelector
 } from "../../redux/usersSelectors";
 
 
@@ -47,12 +44,10 @@ type UsersPropsType = {
 class UsersContainer extends React.Component<UsersPropsType> {
 
     componentDidMount() {
-        debugger
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
     }
 
     onPageChanged = (pageNumber: number) => {
-        debugger
         this.props.setCurrentPage(pageNumber);
         this.props.getUsers(pageNumber, this.props.pageSize);
     }

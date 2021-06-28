@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {ProfileType} from "../../../redux/profileReducer";
+
 
 
 type ProfileStatusType = {
-    profile: ProfileType
+    //profile: ProfileType
     status: string
     updateStatus: (status: string) => void
 

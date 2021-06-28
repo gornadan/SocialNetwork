@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './ProfileInfo.module.css'
 import {ProfileType} from "../../../redux/profileReducer";
-import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
@@ -22,8 +21,9 @@ const ProfileInfo = (props: ProfileInfoType) => {
         {/*src='http://185504.selcdn.ru/static/mv-flowers.reshop.by/catalog/404/16942458315ec39932dd4b7_medium.jpg'/>*/}
         {/*</div>*/}
         <div className={classes.descriptionBlock}>
-            <img src={props.profile.photos.large}/>
-            <ProfileStatusWithHooks profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+            <img alt={"img"} src={props.profile.photos.large}/>
+            {/*<ProfileStatusWithHooks profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>*/}
+            <ProfileStatusWithHooks  status={props.status} updateStatus={props.updateStatus}/>
             {/*<div >{props.profile.status}</div>*/}
             {/*ava + description</div>*/}
         </div>

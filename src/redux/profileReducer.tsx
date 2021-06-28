@@ -4,9 +4,10 @@ import {profileAPI, usersAPI} from "../api/api";
 
 
 const ADD_POST = "ADD_POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
+// const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
+const DELETE_POST = "DELETE_POST";
 
 type ContactsType = {
     github: string
@@ -19,7 +20,7 @@ type ContactsType = {
     mainLink: string
 }
 
-type PhotosType  = {
+type PhotosType = {
     small: string
     large: string
 }
@@ -30,15 +31,16 @@ export type ProfileType = {
     lookingForAJobDescription: string
     fullName: string
     contacts: ContactsType
-     photos: PhotosType
+    photos: PhotosType
 
 }
 
 export type ProfileActionsTypes =
     ReturnType<typeof AddPostAC>
+    | ReturnType<typeof deletePostAC>
     // | ReturnType<typeof UpdateNewPostTextAC>
     | ReturnType<typeof setUserProfile>
-    | ReturnType<typeof  SetStatus>
+    | ReturnType<typeof SetStatus>
 
 export type PostsType = {
     id: number
@@ -62,13 +64,19 @@ let initialState = {
 export type InitialStateTypeProfile = typeof initialState
 
 
-
 type AddPostACType = {
     type: typeof ADD_POST,
     newPostText: string
 }
 export const AddPostAC = (newPostText: string): AddPostACType => {
     return {type: ADD_POST, newPostText}
+}
+type DeletePostACType = {
+    type: typeof DELETE_POST,
+    postId: number
+}
+export const deletePostAC = (postId: number): DeletePostACType => {
+    return {type: DELETE_POST, postId}
 }
 
 // type UpdateNewPostTextACType = {
@@ -89,10 +97,11 @@ type SetUserProfileACType = {
 
 }
 
-export const setUserProfile = (profile: ProfileType | null ): SetUserProfileACType => {
+export const setUserProfile = (profile: ProfileType | null): SetUserProfileACType => {
     return {
         type: SET_USER_PROFILE,
-        profile: profile    }
+        profile: profile
+    }
 };
 type SetStatusACType = {
     type: typeof SET_STATUS
@@ -100,9 +109,9 @@ type SetStatusACType = {
 
 }
 
-export const SetStatus = (status: string ): SetStatusACType => {
-    return {type: SET_STATUS, status}};
-
+export const SetStatus = (status: string): SetStatusACType => {
+    return {type: SET_STATUS, status}
+};
 
 
 export const profileReducer = (state = initialState, action: ProfileActionsTypes): InitialStateTypeProfile => {
@@ -135,30 +144,31 @@ export const profileReducer = (state = initialState, action: ProfileActionsTypes
                 status: action.status
             };
         }
+        case DELETE_POST: {
+            return {
+                ...state,
+                posts: state.posts.filter(p => p.id != action.postId)
+            };
+        }
         default:
             return state
     }
-
-}
-
-export const getUserProfile = (userId: number) => (dispatch: Dispatch) => {
-    usersAPI.getProfile(userId)
-        .then(response => {
-            dispatch(setUserProfile(response.data))
-        })
-}
-
-export const getStatus = (userId: number) => (dispatch: Dispatch) => {
-    profileAPI.getStatus(userId)
-        .then(response => {
-            dispatch(SetStatus(response.data))
-        })
 };
 
-export const updateStatus = (status: string) => (dispatch: Dispatch) => {
-    profileAPI.updateStatus(status)
-        .then(response => {
-            if(response.data.resultCode === 1){
-            dispatch(SetStatus(status))}
-        })
-}
+export const getUserProfile = (userId: number) => async (dispatch: Dispatch) => {
+    let response = await usersAPI.getProfile(userId);
+    dispatch(setUserProfile(response.data));
+};
+
+export const getStatus = (userId: number) => async (dispatch: Dispatch) => {
+    let response = await profileAPI.getStatus(userId);
+    dispatch(SetStatus(response.data));
+};
+
+export const updateStatus = (status: string) => async (dispatch: Dispatch) => {
+    let response = await profileAPI.updateStatus(status);
+
+    if (response.data.resultCode === 1) {
+        dispatch(SetStatus(status));
+    }
+};

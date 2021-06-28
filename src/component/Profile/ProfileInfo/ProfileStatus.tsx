@@ -1,12 +1,10 @@
 import React from 'react';
-import {ProfileType} from "../../../redux/profileReducer";
 
 
 type ProfileStatusType = {
-    profile: ProfileType
+    //profile: ProfileType
     status: string
     updateStatus: (status: string) => void
-
 }
 
 class ProfileStatus extends React.Component<ProfileStatusType> {
@@ -19,7 +17,6 @@ class ProfileStatus extends React.Component<ProfileStatusType> {
          this.setState({
              editMode: true
          })
-
      };
     deactivateEditMode = () => {
         this.setState({

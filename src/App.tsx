@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import './App.css';
 import Navbar from "./component/Navbar/Navbar";
 import {Route, withRouter} from "react-router-dom";
@@ -16,8 +16,7 @@ import Preloader from "./component/common/Preloader";
 type AppComponentType = {
     initialized: boolean
     initializeApp: () => void
-}
-
+};
 
 class App extends React.Component<AppComponentType> {
     componentDidMount() {
@@ -25,7 +24,7 @@ class App extends React.Component<AppComponentType> {
     }
 
     render() {
-        if(!this.props.initialized) {
+        if (!this.props.initialized) {
             return <Preloader/>
         }
         return (
