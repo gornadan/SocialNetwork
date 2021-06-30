@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import React from "react";
 import './App.css';
 import Navbar from "./component/Navbar/Navbar";
 import {Route, withRouter} from "react-router-dom";
@@ -39,6 +39,7 @@ class App extends React.Component<AppComponentType> {
                     <Route path="/messages" render={withSuspense(DialogsContainer)}/>
                     <Route path="/users" render={() => <UsersContainer/>}/>
                     <Route path="/login" render={() => <Login/>}/>
+                    <Route path="*" render={() => <div>404 NOT FOUND</div>}/>
                 </div>
             </div>
         )

@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="029da6a2-591d-423e-97da-458564929ed2" name="Default" comment="feat:  implement introduction suspense and React.lazy for application">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="029da6a2-591d-423e-97da-458564929ed2" name="Default" comment="delete idea">
+      <change afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileDataForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatusWithHooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Profile/ProfileInfo/ProfileStatusWithHooks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/common/FormsControl/FormsControl.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/common/FormsControl/FormsControl.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +26,13 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="my-app" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,9 +117,6 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="906" />
@@ -360,7 +376,10 @@
       <workItem from="1620120489704" duration="19610000" />
       <workItem from="1620386885903" duration="1402000" />
       <workItem from="1624594580045" duration="5477000" />
-      <workItem from="1624857531645" duration="14203000" />
+      <workItem from="1624857531645" duration="25626000" />
+      <workItem from="1624942218963" duration="19080000" />
+      <workItem from="1624978898467" duration="2686000" />
+      <workItem from="1625031516047" duration="11824000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add profileStatusTest">
       <created>1624862690818</created>
@@ -376,7 +395,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624870744887</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat:  implement introduction suspense and React.lazy for application">
+      <created>1624872977223</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624872977223</updated>
+    </task>
+    <task id="LOCAL-00004" summary="delete idea">
+      <created>1624873015629</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624873015629</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -445,7 +478,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add profileStatusTest" />
     <MESSAGE value="feat:  implement introduction suspense and React.lazy for application" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:  implement introduction suspense and React.lazy for application" />
+    <MESSAGE value="delete idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete idea" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -460,7 +494,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.tsx</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

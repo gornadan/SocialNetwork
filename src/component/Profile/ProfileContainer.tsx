@@ -2,12 +2,12 @@ import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {AppStateType} from "../../redux/reduxStore";
-import {getStatus, getUserProfile, ProfileType, updateStatus} from "../../redux/profileReducer";
+import {getStatus, getUserProfile, ProfileType, savePhoto, saveProfile, updateStatus} from "../../redux/profileReducer";
 import Preloader from "../common/Preloader";
-import { withRouter} from "react-router";
+import {withRouter} from "react-router";
 import {compose} from "redux";
 
-type MapStateToPropsType =  {
+type MapStateToPropsType = {
     profile: ProfileType | null,
     isAuth: boolean,
     status: string,
@@ -15,39 +15,50 @@ type MapStateToPropsType =  {
 }
 
 type ProfilePropsType = {
-    profile:  ProfileType | null
+    profile: ProfileType | null
     setUserProfile: (profile: ProfileType) => void
     userId: number
 }
 
-class ProfileContainer extends React.Component <any>{
-    componentDidMount () {
-
-         let userId = this.props.match.params.userId;
-        if(!userId){
-             userId = this.props.authorizedUserId
-            if(!userId) {
-                 this.props.history.push("/login")
+class ProfileContainer extends React.Component <any> {
+    refreshProfile() {
+        let userId = this.props.match.params.userId;
+        if (!userId) {
+            userId = this.props.authorizedUserId
+            if (!userId) {
+                this.props.history.push("/login")
             }
-         }
-         this.props.getUserProfile(userId);
+        }
+        this.props.getUserProfile(userId);
         this.props.getStatus(userId)
+    }
 
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<{}>, snapshot?: any) {
+        if (this.props.match.params.userId === prevProps.match.params.userId) {
+            this.refreshProfile()
+        }
     }
 
     render() {
-            if (this.props.profile === null){
-               return  <Preloader />
-            } else {
+        if (this.props.profile === null) {
+            return <Preloader/>
+        } else {
 
             return <Profile   {...this.props}
+                              isOwner={!this.props.match.params.userId}
+                              savePhoto={this.props.savePhoto}
+                              saveProfile={this.props.saveProfile}
                               profile={this.props.profile}
                               status={this.props.status}
                               updateStatus={this.props.updateStatus}
-                               />}
+            />
+        }
     }
 }
-
 
 
 let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
@@ -61,7 +72,7 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 }
 
 
-export default compose<React.ComponentType>(connect (mapStateToProps,
-    {getUserProfile, getStatus, updateStatus}),
+export default compose<React.ComponentType>(connect(mapStateToProps,
+    {getUserProfile, getStatus, updateStatus, savePhoto, saveProfile}),
     withRouter)(ProfileContainer)
 

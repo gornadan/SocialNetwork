@@ -39,7 +39,10 @@ type UsersPropsType = {
     followingInProgress: Array<number>
     getUsers: (currentPage: number, pageSize: number) => void
 }
-
+export type UsersPhotoApiType = {
+    large: string
+    small: string
+}
 
 class UsersContainer extends React.Component<UsersPropsType> {
 
